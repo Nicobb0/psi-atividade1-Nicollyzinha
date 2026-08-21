@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <h1>{{ livro.titulo }}</h1>
+    <p>Autor: {{ livro.autor }}</p>
+    <p>Ano: {{ livro.ano }}</p>
+    
+    <h2>Resenhas</h2>
+    {% for r in resenhas %}
+        <p><strong>{{ r.usuario }}</strong> (Nota: {{ r.nota }}): {{ r.texto }}</p>
+    {% else %}
+        <p>Este livro ainda não possui resenhas.</p>
+    {% endfor %}
+{% endblock %}
